@@ -7,7 +7,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloControllar {
     @GetMapping("/hello")
-    public String hello(){return "hello world";}
+    public HelloResponse hello(){
+        return new HelloResponse("Hello world");
+    }
+
+    @GetMapping("/dogs")
+    public Dog getDog(){
+        return new Dog("ポチ","柴犬",3);
+    }
 
     @DeleteMapping("/hello")
     public String deletehello(){return "delete hello";}
